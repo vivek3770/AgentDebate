@@ -1,0 +1,184 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding-bottom: var(--space-3xl);
+}
+
+/* ──── Top Bar ──── */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--text-accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.topBarCenter {
+  flex: 1;
+  text-align: center;
+  padding: 0 var(--space-md);
+  min-width: 0;
+}
+
+.topic {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topBarRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* ──── Timeline ──── */
+.timelineWrap {
+  padding: 0 var(--space-lg);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* ──── Arena ──── */
+.arena {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--space-md);
+  padding: 0 var(--space-lg);
+  align-items: start;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-top: var(--space-xl);
+}
+
+.dividerLine {
+  width: 2px;
+  height: 40px;
+  background: var(--border-medium);
+}
+
+.dividerLabel {
+  font-size: 0.7rem;
+  font-weight: 900;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+}
+
+/* ──── Judge ──── */
+.judgeWrap {
+  padding: 0 var(--space-lg);
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+/* ──── Score ──── */
+.scoreWrap {
+  padding: 0 var(--space-lg);
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* ──── Controls ──── */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  position: fixed;
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  z-index: 50;
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+/* ──── Connecting ──── */
+.connecting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-3xl);
+  color: var(--text-secondary);
+}
+
+.connectingSpinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border-medium);
+  border-top-color: var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ──── Error ──── */
+.errorBanner {
+  margin: 0 var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(244, 63, 94, 0.1);
+  border: 1px solid rgba(244, 63, 94, 0.3);
+  border-radius: var(--radius-md);
+  color: var(--con-light);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ──── Responsive ──── */
+@media (max-width: 900px) {
+  .arena {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .divider {
+    flex-direction: row;
+    padding-top: 0;
+    padding: var(--space-sm) 0;
+  }
+
+  .dividerLine {
+    width: 40px;
+    height: 2px;
+  }
+}
